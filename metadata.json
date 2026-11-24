@@ -1,0 +1,6 @@
+{
+  "name": "BT-Time Neo",
+  "description": "Cliente web PWA responsive y proxy seguro para gestión de jornada, cronómetro de tareas y hoja de horas BT-Time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: bt-time-neo
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEO_API_BASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SESSION_STORE_PATH
+        value: /var/data/sessions.enc.json
+      - key: ALLOW_PRIVATE_HTTP_UPSTREAM
+        value: "false"
+    disk:
+      name: bt-time-sessions
+      mountPath: /var/data
+      sizeGB: 1
